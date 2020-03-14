@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            <img style="height:400px;width:100%;" src="~/Images/saree.PNG" alt="First slide">
+            <div class="carousel-caption">
+                <h3>First slide</h3>
+                
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:400px;width:100%;" src="~/Images/sweets.PNG" alt="Second slide">
+            <div class="carousel-caption">
+                <h3>Second slide</h3>
+                
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height:400px;width:100%;" src="~/Images/pineapple.PNG" alt="Third slide">
+            <div class="carousel-caption">
+                <h3>Third slide</h3>
+               
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+    
+</div>
+
+<div class="olContent f1"><h2 style="color:black">Search Product or Category</h2></div> 
+<div class="olSearch fr">
+    <input type="text" placeholder="Enter Keywords" name="searchkey" class="inputComn houseText form-control" />
+    <div class="searchIcon">
+        <button type="button" class="searchBtn">
+
+            <img src="~/Images/icons8-search-24.png" />
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Our Products<small>Trends Product</small></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+    <div class="col-md-3 col-sm-6 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+            <img src="~/Images/saree1.jpg" class="img-responsive" title="click to view Product detail" style="cursor:pointer;height:160px;width:100%"/>
+            <div class="caption">
+                <h5>Product Name</h5>
+                <p>500.00tk</p>
+                <p>Available</p>
+                <div class="product-item-badge">New</div>
+            </div>
+            
+        </div>
+    </div>
+</div>
