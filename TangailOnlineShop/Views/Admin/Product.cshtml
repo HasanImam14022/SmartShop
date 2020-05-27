@@ -17,7 +17,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Sr. No.</th>
+                        <th>Quantity</th>
                         <th>Category Name</th>
                         <th>Action</th>
 
@@ -25,25 +25,27 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Sr. No.</th>
+                        <th>Quantity</th>
                         <th>Product</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
+                    
                     @foreach (var item in Model)
                     {
-                        int count = 1;
+                         
                         <tr>
-                            <td>@count</td>
+                            <td>@item.Quantity</td>
                             <td>@item.ProductName</td>
                             <td>
 
                                 @Html.ActionLink("Edit", "ProductEdit", new { productId = item.ProductId })
                             </td>
 
+
                         </tr>
-                        count++;
+
                     }
 
                 </tbody>

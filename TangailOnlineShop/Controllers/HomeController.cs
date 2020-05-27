@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TangailOnlineShop.Models.Home;
 
 namespace TangailOnlineShop.Controllers
 {
@@ -10,7 +11,8 @@ namespace TangailOnlineShop.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            HomeIndexViewModel model = new HomeIndexViewModel();
+            return View(model.CreateModel());
         }
 
         public ActionResult About()

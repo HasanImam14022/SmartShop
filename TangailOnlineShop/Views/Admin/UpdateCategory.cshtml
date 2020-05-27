@@ -26,7 +26,7 @@
         <div class="card-body">
             @using (Html.BeginForm("UpdateCategory", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
-                @Html.HiddenFor(m => m.CategoryId)
+                @Html.HiddenFor(m =>m.CategoryId)
 
                 <div class="form-group">
                     <label class="control-label">Category Name</label>

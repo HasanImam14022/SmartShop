@@ -7,7 +7,7 @@
 
 <div class="container">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("ProductEdit","Admin",FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
@@ -25,11 +25,14 @@
                 </div>
             </div>
         </div>
+        @{
+            List<SelectListItem> data = ViewBag.CateGoryList;
+        }
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.CategoryId, data, "---Select---", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -38,7 +41,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.CheckBox("IsActive")
                     @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -47,29 +50,12 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsDelete, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsDelete, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.CheckBox("IsDelete")
                     @Html.ValidationMessageFor(model => model.IsDelete, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                @Html.LabelFor(model => model.ModifiedDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ModifiedDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ModifiedDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.CreatedDate)
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -84,7 +70,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ProductImage, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProductImage, new { htmlAttributes = new { @class = "form-control" } })
+                    <input type="file" name="file" id="file" style="width:100%"; />
                     @Html.ValidationMessageFor(model => model.ProductImage, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -94,7 +80,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsFeatured, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.CheckBox("IsFeatured")
                     @Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
                 </div>
             </div>

@@ -7,68 +7,78 @@
     @*@Styles.Render("~/Content/css")*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/MyMainLayout.css" rel="stylesheet" />
+    <link href="~/Content/MyMainLayOut.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    
+
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="logo">
-                    <h1><a href="#">Tangail<span>Shopping Store</span></a></h1>
+                    <h1><a href="#">Tangail <span>Shopping Store</span></a></h1>
+                    <p>My Shop</p>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="account">
                     <ul>
                         <li>
                             <div class="hidden-xs">
-                                <h4>Call</h4>
+                                <h4><a>Call</a></h4>
                                 <marquee><p>01776740802</p></marquee>
-
                             </div>
+
                             <div class="visible-xs">
 
-                                <p>01776740802</p>
-
+                                <p>018##-######</p>
                             </div>
+
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="nav-menus">
-                        <ul class="nav nav-pills">
-                            <li class="active"><a style="border-radius:initial;" href="#">Home</a></li>
-                            <li class=""><a style="border-radius:initial;" href="../Admin/Dashboard">location</a></li>
-                            <li class=" "><a style="border-radius:initial;" href="#">About</a></li>
-                        </ul>
-                    </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="nav-menus">
+
+                    <ul class="nav nav-pills">
+                        <li class="active"><a style="border-radius:initial;" href="#">Home</a></li>
+                        <li><a style="border-radius:initial;" href="#">Location</a></li>
+                        <li><a style="border-radius:initial;" href="#">About</a></li>
+                    </ul>
                 </div>
             </div>
-        
+
+        </div>
+
+
         @RenderBody()
         <hr />
         <footer>
             <div class="row">
                 <div class="col-md-12 copyright">
+
                     <div class="col-md-6 col-sm-6 copyright-left">
-                        <p>@DateTime.Now.Year - My ASP.NET Application</p>
+                        <p>&copy; @DateTime.Now.Year - OnlineShopingStore. All right reserved.</p>
                     </div>
+
                     <div class="col-md-6 col-sm-6 copyright-right">
+
                         <ul class="list-unstyled list-social">
                             <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
         </footer>
     </div>
 
